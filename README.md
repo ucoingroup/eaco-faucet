@@ -249,3 +249,17 @@ MIT - Free to use, modify, and distribute.
 ---
 
 EACO Faucet - Free EACO Token Claim Website v0.01
+
+## Contact
+
+- **Email**: eaco2cc@gmail.com
+
+## Screenshots
+
+**Co-Build & Share (English)**
+
+![Co-Build & Share EN](assets/cobuild-en.png)
+
+**共建共享 (中文)**
+
+![Co-Build & Share ZH](assets/cobuild-zh.png)
