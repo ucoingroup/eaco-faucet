@@ -1,0 +1,18 @@
+{
+  "name": "eaco-faucet-signer",
+  "version": "1.0.0",
+  "description": "EACO Faucet Node.js Signer Service - Signs SPL token transfers on Solana",
+  "main": "signer.js",
+  "scripts": {
+    "start": "node signer.js",
+    "dev": "node signer.js"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.87.0",
+    "@solana/spl-token": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT"
+}
