@@ -245,3 +245,7 @@ MIT - Free to use, modify, and distribute.
 - Contract: `DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`
 - EACO = Energy x Attitude x Cooperation x Optimization
 - Earth's Best AI + RWA + Web3 Coin
+
+---
+
+EACO Faucet - Free EACO Token Claim Website v0.01
