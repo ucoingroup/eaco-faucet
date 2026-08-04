@@ -95,7 +95,23 @@ eaco-faucet/
 | Blockchain | Solana |
 | Type | SPL Token |
 | Contract Address | `DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH` |
+| Faucet Wallet | `5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD` |
 | Core Concept | Energy x Attitude x Cooperation x Optimization |
+
+## Community Donations / 社区打赏
+
+EACO Faucet is a community-driven project. If you'd like to support the faucet, you can send any Solana-based digital assets to the faucet wallet:
+
+**Faucet Wallet Address**: `5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD`
+
+Accepted tokens (including but not limited to):
+- EACO
+- SOL
+- USDT
+- USDC
+- Any SPL token on Solana
+
+Every contribution helps keep the faucet running for Earth villagers worldwide.
 
 ## Security Architecture
 
@@ -189,7 +205,7 @@ For live mode, deploy frontend to GitHub Pages and backend to a VPS.
 
 ## Footer Links
 
-The footer contains 12 EACO ecosystem links:
+The footer contains 13 EACO ecosystem links:
 1. Earth's Best Coin
 2. EACO 50 Rate
 3. 100 Ways To Wealth
@@ -202,6 +218,7 @@ The footer contains 12 EACO ecosystem links:
 10. Earth Village School
 11. EACO Build World
 12. EACO Web3
+13. Linguistic Capital
 
 ## Important Warnings
 
