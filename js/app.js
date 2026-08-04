@@ -43,33 +43,12 @@
     var ls = $('langSelect');
     if (ls) ls.value = lang;
 
-    // Update bilingual toggle button text
-    var zt = $('zhToggle');
-    if (zt) {
-      zt.textContent = t('bilingual_toggle');
-    }
-
-    // Update footer links
-    buildFooterLinks();
-
     // Update CA label
     var caLabel = document.querySelector('[data-i18n="ca_label"]');
     if (caLabel) caLabel.textContent = t('ca_label');
 
     // Update slider label
     updateSliderLabel();
-  }
-
-  function toggleBilingual() {
-    // Toggle between Chinese and English
-    if (currentLang === 'zh-CN') {
-      applyLanguage('en');
-    } else if (currentLang === 'en') {
-      applyLanguage('zh-CN');
-    } else {
-      // For other languages, toggle to Chinese first
-      applyLanguage('zh-CN');
-    }
   }
 
   // -- Theme --
@@ -149,6 +128,52 @@
       hint.textContent = t('ca_copied');
       setTimeout(function() { hint.textContent = orig; }, 2000);
     }
+  }
+
+  // -- Donation Address Copy --
+  // FAUCET_WALLET is the public Solana address for receiving community donations
+  var FAUCET_WALLET = '5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD';
+
+  window.copyDonateAddr = function() {
+    var addr = FAUCET_WALLET;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(addr).then(function() {
+        showDonateCopyHint();
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = addr;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta);
+      showDonateCopyHint();
+    }
+  };
+
+  function showDonateCopyHint() {
+    var hint = document.querySelector('.donate-copy-hint');
+    if (hint) {
+      var orig = t('donate_copy_hint');
+      hint.textContent = t('ca_copied');
+      setTimeout(function() { hint.textContent = orig; }, 2000);
+    }
+  }
+
+  // -- Donation QR Code (using public API, no dependency) --
+  function initDonateQR() {
+    var qrContainer = $('donateQR');
+    if (!qrContainer) return;
+    // Use api.qrserver.com (free, no key needed) to generate QR
+    var addr = FAUCET_WALLET;
+    var qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(addr);
+    var img = document.createElement('img');
+    img.src = qrUrl;
+    img.alt = 'EACO Faucet Wallet QR';
+    img.onload = function() { qrContainer.style.display = 'flex'; };
+    img.onerror = function() { qrContainer.style.display = 'none'; };
+    qrContainer.innerHTML = '';
+    qrContainer.appendChild(img);
   }
 
   // -- Slider --
@@ -742,10 +767,6 @@
     var ls = $('langSelect');
     if (ls) ls.addEventListener('change', function() { applyLanguage(this.value); });
 
-    // Bilingual toggle
-    var zt = $('zhToggle');
-    if (zt) zt.addEventListener('click', toggleBilingual);
-
     // Theme dots
     $$('.theme-dot').forEach(function(dot) {
       dot.addEventListener('click', function() {
@@ -810,6 +831,9 @@
 
     // Build footer links
     buildFooterLinks();
+
+    // Initialize donation QR
+    initDonateQR();
 
     // Update slider
     updateSliderLabel();
