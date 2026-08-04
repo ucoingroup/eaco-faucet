@@ -29,9 +29,6 @@ COPY server/config.php /var/www/server/
 COPY server/signer.js /var/www/server/
 COPY server/stats.php /var/www/server/
 COPY server/package.json /var/www/server/
-COPY .gitignore /var/www/
-COPY Dockerfile /var/www/
-COPY .dockerignore /var/www/
 
 # Expose port
 EXPOSE 8080
