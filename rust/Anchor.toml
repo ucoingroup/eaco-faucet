@@ -1,0 +1,18 @@
+# EACO Faucet Anchor Configuration
+
+[provider]
+cluster = "mainnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.mainnet]
+eaco_faucet = "EACoFaucet11111111111111111111111111111111111"
+
+[programs.devnet]
+eaco_faucet = "EACoFaucet11111111111111111111111111111111111"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+
+[test]
+startup_wait = 5000
+shutdown_wait = 2000
