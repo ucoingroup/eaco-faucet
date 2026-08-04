@@ -632,10 +632,49 @@ eaco-faucet/
 | 区块链 | Solana |
 | 类型 | SPL Token |
 | 合约地址 | `DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH` |
+| 水龙头钱包 | `5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD` |
 | 核心概念 | Energy x Attitude x Cooperation x Optimization |
 | 定位 | Earth's Best AI + RWA + Web3 crypto asset |
 | 公式 | EACO = Positive Energy x Positive Mindset x Global Collaboration x Continuous Optimization |
 | 目标 | 提升个人认知 / 提升组织效率 / 提升社会文明 / 促进地球可持续发展 / 与100个认知模型结合 |
+
+---
+
+## 12. 共建共享 / Co-Build & Share
+
+### 社区打赏
+
+EACO 水龙头是社区驱动的开源项目，欢迎全球网友共建共享。如果您想支持水龙头运营，可以打赏任何 Solana 链上的数字资产。
+
+**水龙头钱包地址**: `5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD`
+
+支持的打赏代币（包括但不限于）:
+- EACO
+- SOL
+- USDT
+- USDC
+- 任意 SPL 代币
+
+### 语言资本
+
+地球村最好的 13.5 亿句语言资本 - EACO 语言资本海外小组:
+https://ucoingroup.github.io/linguistic-capital/
+
+### 底部链接（13 个）
+
+1. Earth's Best Coin - https://ucoingroup.github.io/earths-best-coin/
+2. EACO 50 Rate - https://ucoingroup.github.io/eaco50rate/
+3. 100 Ways To Wealth - https://ucoingroup.github.io/100WaysToWealth/
+4. Earth 100 Friends - https://ucoingroup.github.io/earth-100-friends/
+5. EACO SWAP - https://ucoingroup.github.io/eacoSWAP/
+6. Good Books - https://ucoingroup.github.io/good-books/
+7. EUR-EACO - https://ucoingroup.github.io/eur-eaco/
+8. AU Trade - https://ucoingroup.github.io/au-trade/
+9. Mohist Tech - https://ucoingroup.github.io/Mohist-Tech/
+10. Earth Village School - https://ucoingroup.github.io/Earth-Village-School/
+11. EACO Build World - https://eaco-build-world.base44.app/
+12. EACO Web3 - https://eaco-web3.base44.app/
+13. Linguistic Capital - https://ucoingroup.github.io/linguistic-capital/
 
 ---
 
