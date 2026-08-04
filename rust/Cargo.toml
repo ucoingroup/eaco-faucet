@@ -1,0 +1,29 @@
+[package]
+name = "eaco-faucet"
+version = "0.1.0"
+description = "EACO Faucet - Solana on-chain SPL token faucet program"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "eaco_faucet"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.29.0"
+anchor-spl = "0.29.0"
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.package.eaco-faucet]
+opt-level = 3
