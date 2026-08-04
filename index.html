@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://api.qrserver.com; img-src 'self' data: https://api.qrserver.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.mainnet-beta.solana.com https://solana-rpc.publicnode.com; frame-ancestors 'none';">
+<meta name="referrer" content="no-referrer">
 <title>EACO Faucet - Free EACO Token Claim | Earth's Best Coin</title>
 <meta name="description" content="EACO Faucet - Free Solana SPL EACO token claim. Earth's Best AI + RWA + Web3 Coin. Energy x Attitude x Cooperation x Optimization.">
 <style>
@@ -55,10 +57,7 @@ body.rtl{direction:rtl}
 .theme-dot[data-t="default"]{background:linear-gradient(135deg,#0a0e17,#7c3aed)}
 .theme-dot[data-t="green"]{background:linear-gradient(135deg,#0d1410,#4ade80)}
 .theme-dot[data-t="business"]{background:linear-gradient(135deg,#f0f4f8,#2563eb)}
-.nav-zh-toggle{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:5px 12px;border-radius:20px;font-size:12px;cursor:pointer;outline:none;transition:all .2s;font-weight:600}
-.nav-zh-toggle:hover{border-color:var(--accent);color:var(--accent)}
-
-/* Hero */
+.theme-switcher{display:flex;gap:6px;align-items:center}
 .hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 20px 40px;background:radial-gradient(ellipse at top,var(--hero-grad1),transparent 50%),radial-gradient(ellipse at bottom,var(--hero-grad2),transparent 50%)}
 .hero-badge{display:inline-block;padding:6px 20px;border-radius:20px;background:rgba(var(--accent-rgb),0.1);border:1px solid var(--accent);color:var(--accent);font-size:13px;font-weight:600;margin-bottom:24px}
 .hero h1{font-size:clamp(34px,7vw,68px);font-weight:900;margin-bottom:16px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.15}
@@ -141,6 +140,24 @@ body.rtl{direction:rtl}
 .safety-list li{padding:8px 0;font-size:14px;color:var(--text2);display:flex;align-items:flex-start;gap:8px}
 .safety-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:7px;flex-shrink:0}
 
+/* Donation Section */
+.donate-section{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:32px 20px}
+.donate-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center}
+.donate-title{font-size:20px;font-weight:800;color:var(--accent);margin-bottom:8px}
+.donate-desc{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:20px}
+.donate-tokens{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px}
+.donate-token{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--bg2);color:var(--text2)}
+.donate-addr-box{background:var(--bg2);border:1px dashed var(--accent);border-radius:10px;padding:14px;margin-bottom:16px;cursor:pointer;transition:all .2s}
+.donate-addr-box:hover{border-color:var(--gold);box-shadow:0 0 16px rgba(var(--accent-rgb),0.15)}
+.donate-addr-label{font-size:11px;color:var(--text2);margin-bottom:4px}
+.donate-addr{font-family:monospace;font-size:14px;color:var(--gold);word-break:break-all}
+.donate-copy-hint{font-size:11px;color:var(--accent);margin-top:6px}
+.donate-qr{margin:12px auto;width:180px;height:180px;background:#fff;border-radius:12px;padding:8px;display:flex;align-items:center;justify-content:center}
+.donate-qr img{width:100%;height:100%;border-radius:8px}
+.donate-subtitle{font-size:15px;font-weight:700;color:var(--accent2);margin-bottom:10px}
+.donate-link-btn{display:inline-block;padding:10px 24px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.donate-link-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(var(--accent-rgb),0.3)}
+
 /* Footer */
 .footer{position:relative;z-index:1;background:var(--bg2);border-top:1px solid var(--border);padding:40px 20px 28px;margin-top:40px}
 .footer-content{max-width:1200px;margin:0 auto}
@@ -163,7 +180,6 @@ body.rtl{direction:rtl}
   .nav-right{gap:6px}
   .lang-select{padding:4px 8px;font-size:11px}
   .theme-dot{width:16px;height:16px}
-  .nav-zh-toggle{padding:4px 8px;font-size:11px}
   .claim-card{padding:24px 18px}
   .claim-amount-value{font-size:36px}
   .pillars-grid{grid-template-columns:repeat(2,1fr)}
@@ -195,7 +211,6 @@ body.rtl{direction:rtl}
       <option value="ru">PyccKNN</option>
       <option value="ar">Arabic</option>
     </select>
-    <button class="nav-zh-toggle" id="zhToggle" title="Bilingual toggle">EN</button>
     <div class="theme-switcher">
       <div class="theme-dot active" data-t="default" title="Space"></div>
       <div class="theme-dot" data-t="green" title="Earth"></div>
@@ -363,6 +378,39 @@ body.rtl{direction:rtl}
       <li data-i18n="safety_4">Always verify the contract address before any transaction</li>
       <li data-i18n="safety_5">EACO is a community MEME token, not financial advice (DYOR)</li>
     </ul>
+  </div>
+</section>
+
+<!-- Co-Build & Share / 共建共享 -->
+<section class="donate-section">
+  <div class="donate-card">
+    <h3 class="donate-title" data-i18n="cobuild_title">Co-Build & Share</h3>
+    <p class="donate-desc" data-i18n="cobuild_desc">EACO Faucet is a community-driven open-source project. Everyone is welcome to contribute and share. If you'd like to support the faucet, you can send any Solana-based digital assets - EACO, SOL, USDT, USDC, and more. Any amount is appreciated!</p>
+
+    <!-- Donation -->
+    <div class="donate-subtitle" data-i18n="donate_subtitle">Support the Faucet</div>
+    <div class="donate-tokens">
+      <span class="donate-token">EACO</span>
+      <span class="donate-token">SOL</span>
+      <span class="donate-token">USDT</span>
+      <span class="donate-token">USDC</span>
+      <span class="donate-token" data-i18n="donate_more">+ Any SPL Token</span>
+    </div>
+    <div class="donate-addr-box" id="donateAddrBox" onclick="copyDonateAddr()">
+      <div class="donate-addr-label" data-i18n="donate_addr_label">Faucet Wallet Address (Solana):</div>
+      <div class="donate-addr" id="donateAddr">5dcBHpYzXXBmN2qUU4a7QytuVbJ77K5YBa3LCwNqDwXD</div>
+      <div class="donate-copy-hint" data-i18n="donate_copy_hint">Click to copy</div>
+    </div>
+    <div class="donate-qr" id="donateQR"></div>
+    <p style="font-size:12px;color:var(--text2);margin-top:8px" data-i18n="donate_thanks">Thank you for supporting Earth's Best Coin community!</p>
+
+    <!-- Divider -->
+    <div style="border-top:1px solid var(--border);margin:24px 0"></div>
+
+    <!-- Linguistic Capital -->
+    <div class="donate-subtitle" data-i18n="lang_cap_subtitle">Linguistic Capital</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:14px" data-i18n="lang_cap_desc">Earth's Best 1.35 Billion Sentences of Linguistic Capital - EACO Language Capital Overseas Group</p>
+    <a href="https://ucoingroup.github.io/linguistic-capital/" target="_blank" rel="noopener noreferrer" class="donate-link-btn" data-i18n="lang_cap_btn">Visit Linguistic Capital</a>
   </div>
 </section>
 
