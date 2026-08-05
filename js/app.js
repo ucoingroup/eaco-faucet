@@ -1,4 +1,4 @@
-/* EACO Faucet V1 - Zero-Barrier Frontend (No Wallet Required) */
+/* EACO Faucet v0.01 - Zero-Barrier Frontend (No Wallet Required) - DEMO */
 /* Features: Address input, Claim, Theme switch, Language switch, Starfield animation */
 
 (function() {
