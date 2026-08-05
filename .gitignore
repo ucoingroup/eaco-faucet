@@ -5,6 +5,9 @@ server/data/
 server/node_modules/
 server/package-lock.json
 
+# V2 local backup (do not upload to GitHub)
+eaco-faucet-v2/
+
 # Rust build artifacts
 rust/target/
 rust/.anchor/
