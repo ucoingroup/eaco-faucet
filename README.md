@@ -123,10 +123,7 @@ solana-keygen new -o server/faucet-keypair.json
 
 ```bash
 # 向水龙头钱包充值 SOL（用于支付 gas 费）
-# 建议至少 0.1 SOL，每次领取消耗约 0.008 SOL
-
-# 向水龙头钱包充值 EACO 代币（用于分发给用户）
-# 数量根据您计划的领取总量决定
+# 建议至少 0.1 SOL，每次领取消耗约 0.003 SOL
 ```
 
 ### 3. 后端服务部署（必须）
