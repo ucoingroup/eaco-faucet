@@ -94,7 +94,13 @@ var EACO_I18N = {
     "donate_subtitle": "打赏水龙头",
     "lang_cap_subtitle": "语言资本",
     "lang_cap_desc": "地球村最好的 13.5 亿句语言资本 - EACO 语言资本海外小组",
-    "lang_cap_btn": "访问语言资本"
+    "lang_cap_btn": "访问语言资本",
+    "sol_hint": "钱包内需至少 0.008 SOL 作为手续费和账户开户费",
+    "address_label": "输入您的 Solana 钱包地址：",
+    "address_hint": "无需 SOL 或钱包连接。我们将为您创建代币账户并支付费用。",
+    "zero_fee_hint": "零 gas 费！水龙头为您支付所有网络费用。",
+    "status_invalid_address": "无效的 Solana 地址，请检查格式",
+    "status_enter_address": "请输入 Solana 钱包地址"
   },
   "en": {
     "_name": "English",
@@ -189,7 +195,13 @@ var EACO_I18N = {
     "donate_subtitle": "Support the Faucet",
     "lang_cap_subtitle": "Linguistic Capital",
     "lang_cap_desc": "Earth's Best 1.35 Billion Sentences of Linguistic Capital - EACO Language Capital Overseas Group",
-    "lang_cap_btn": "Visit Linguistic Capital"
+    "lang_cap_btn": "Visit Linguistic Capital",
+    "sol_hint": "Wallet needs at least 0.008 SOL for network fees and account creation",
+    "address_label": "Enter your Solana wallet address:",
+    "address_hint": "No SOL or wallet connection needed. We'll create the token account and pay the fee for you.",
+    "zero_fee_hint": "Zero gas fee! The faucet pays all network costs for you.",
+    "status_invalid_address": "Invalid Solana address, please check format",
+    "status_enter_address": "Please enter your Solana wallet address"
   },
   "es": {
     "_name": "Espanol",
@@ -284,7 +296,13 @@ var EACO_I18N = {
     "donate_subtitle": "Apoya el Faucet",
     "lang_cap_subtitle": "Capital Linguistico",
     "lang_cap_desc": "Los mejores 1.350 millones de frases de Capital Linguistico de la Tierra - Grupo de Capital Linguistico EACO en el extranjero",
-    "lang_cap_btn": "Visitar Capital Linguistico"
+    "lang_cap_btn": "Visitar Capital Linguistico",
+    "sol_hint": "La billetera necesita al menos 0.008 SOL para tarifas de red y creación de cuenta",
+    "address_label": "Ingrese su dirección de billetera Solana:",
+    "address_hint": "No necesita SOL ni conexión de billetera. Crearemos la cuenta de tokens y pagaremos la tarifa por usted.",
+    "zero_fee_hint": "¡Tarifa de gas cero! El faucet paga todos los costos de red por usted.",
+    "status_invalid_address": "Dirección de Solana inválida, verifique el formato",
+    "status_enter_address": "Por favor ingrese su dirección de billetera Solana"
   },
   "fr": {
     "_name": "Francais",
@@ -379,7 +397,13 @@ var EACO_I18N = {
     "donate_subtitle": "Soutenir le Faucet",
     "lang_cap_subtitle": "Capital Linguistique",
     "lang_cap_desc": "Les meilleurs 1,35 milliard de phrases de Capital Linguistique de la Terre - Groupe Capital Linguistique EACO a l'etranger",
-    "lang_cap_btn": "Visiter le Capital Linguistique"
+    "lang_cap_btn": "Visiter le Capital Linguistique",
+    "sol_hint": "Le portefeuille a besoin d'au moins 0.008 SOL pour les frais de réseau et la création de compte",
+    "address_label": "Entrez votre adresse de portefeuille Solana:",
+    "address_hint": "Pas besoin de SOL ou de connexion de portefeuille. Nous créerons le compte de jetons et paierons les frais pour vous.",
+    "zero_fee_hint": "Frais de gaz zéro! Le robinet paie tous les coûts réseau pour vous.",
+    "status_invalid_address": "Adresse Solana invalide, vérifiez le format",
+    "status_enter_address": "Veuillez entrer votre adresse de portefeuille Solana"
   },
   "ru": {
     "_name": "Русский",
@@ -474,7 +498,13 @@ var EACO_I18N = {
     "donate_subtitle": "Поддержать Faucet",
     "lang_cap_subtitle": "Языковой Капитал",
     "lang_cap_desc": "Лучшие 1.35 миллиарда предложений Языкового Капитала Земли - Зарубежная группа Языкового Капитала EACO",
-    "lang_cap_btn": "Посетить Языковой Капитал"
+    "lang_cap_btn": "Посетить Языковой Капитал",
+    "sol_hint": "Кошельку требуется минимум 0.008 SOL для сетевых сборов и создания аккаунта",
+    "address_label": "Введите адрес вашего кошелька Solana:",
+    "address_hint": "Не требуется SOL или подключение кошелька. Мы создадим токен-аккаунт и оплатим комиссию за вас.",
+    "zero_fee_hint": "Нулевая комиссия за газ! Кран оплачивает все сетевые расходы за вас.",
+    "status_invalid_address": "Неверный адрес Solana, проверьте формат",
+    "status_enter_address": "Пожалуйста, введите адрес вашего кошелька Solana"
   },
   "ar": {
     "_name": "العربية",
@@ -569,7 +599,13 @@ var EACO_I18N = {
     "donate_subtitle": "ادعم الصنبور",
     "lang_cap_subtitle": "رأس المال اللغوي",
     "lang_cap_desc": "أفضل 1.35 مليار جملة من رأس المال اللغوي للأرض - مجموعة رأس المال اللغوي EACO في الخارج",
-    "lang_cap_btn": "زيارة رأس المال اللغوي"
+    "lang_cap_btn": "زيارة رأس المال اللغوي",
+    "sol_hint": "يحتاج المحفظة إلى 0.008 SOL على الأقل لرسوم الشبكة وإنشاء الحساب",
+    "address_label": "أدخل عنوان محفظة Solana الخاصة بك:",
+    "address_hint": "لا حاجة إلى SOL أو اتصال بالمحفظة. سننشئ حساب الرمز المميز وندفع الرسم نيابة عنك.",
+    "zero_fee_hint": "رسوم غاز صفرية! الصنبور يدفع جميع تكاليف الشبكة نيابة عنك.",
+    "status_invalid_address": "عنوان Solana غير صالح، يرجى التحقق من التنسيق",
+    "status_enter_address": "الرجاء إدخال عنوان محفظة Solana الخاصة بك"
   }
 };
 
