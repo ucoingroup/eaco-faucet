@@ -1,8 +1,12 @@
-# EACO Faucet - Free EACO Token Claim Website
+# EACO Faucet V1 - Zero-Barrier Edition (公开版本)
 
-> **EACO** - Earth's Best Coin = E = Energy x Attitude x Cooperation x Optimization
-> 
-> A free EACO SPL token faucet for Earth villagers. Built with HTML + JS + PHP + Rust (optional).
+**地球村零门槛领取 EACO 水龙头**
+
+## 版本说明
+
+这是 **EACO 水龙头 V1（零门槛版）**，面向全球地球村村民公开发布。用户**无需拥有 SOL、无需连接钱包、无需签名任何交易**，只需提供一个 Solana 公钥地址即可免费领取 EACO 代币。
+
+项目方（水龙头服务端）代为支付所有网络费用（gas）和代币账户创建费（ATA rent）。
 
 **GitHub**: https://github.com/ucoingroup/eaco-faucet
 
