@@ -1,14 +1,27 @@
-# EACO Faucet V1 - Zero-Barrier Edition (公开版本)
+# EACO Faucet v0.01 - Zero-Barrier Edition (演示版本)
 
-**地球村零门槛领取 EACO 水龙头**
+> ⚠️ **重要声明：这是一个演示/开源代码仓库，不是正在运行的生产服务。**
+> 
+> 本仓库包含 EACO 水龙头的完整前端代码和后端代码示例。
+> **要运行真实的水龙头服务，您需要自己部署后端、生成私钥、充值代币。**
+> 
+> **当前版本：v0.01（演示版）** - 包含零门槛领取演示功能。
 
-## 版本说明
+**地球村零门槛领取 EACO 水龙头 - 演示版**
 
-这是 **EACO 水龙头 V1（零门槛版）**，面向全球地球村村民公开发布。用户**无需拥有 SOL、无需连接钱包、无需签名任何交易**，只需提供一个 Solana 公钥地址即可免费领取 EACO 代币。
+---
 
-项目方（水龙头服务端）代为支付所有网络费用（gas）和代币账户创建费（ATA rent）。
+## 这是什么？
 
-**GitHub**: https://github.com/ucoingroup/eaco-faucet
+这是一个**开源演示项目**，展示了如何构建一个零门槛的 Solana SPL 代币水龙头：
+
+- 用户**无需拥有 SOL、无需连接钱包、无需签名任何交易**
+- 只需提供一个 Solana 公钥地址即可"领取"代币
+- 项目方（服务端）代为支付所有网络费用（gas）和代币账户创建费（ATA rent）
+
+**本项目仅包含代码，不包含正在运行的服务。**
+
+---
 
 ## Welcome Earth Villagers / 欢迎地球村网友共建共享
 
@@ -89,6 +102,82 @@ eaco-faucet/
    node signer.js
    ```
 7. **Start PHP** (if using Apache/Nginx, PHP is already served)
+
+## ⚠️ 重要：运行真实水龙头，你需要自己做什么
+
+本仓库**仅包含可公开的代码文件**。以下文件**故意没有上传**，需要您自己创建：
+
+### 1. 水龙头私钥文件（必须）
+
+```bash
+# 生成新的 Solana 密钥对（这将是您的"水龙头钱包"）
+solana-keygen new -o server/faucet-keypair.json
+
+# ⚠️ 警告：
+# - 此文件包含私钥，永远不要上传到 GitHub
+# - 本仓库的 .gitignore 已自动排除此文件
+# - 请妥善备份，丢失意味着丢失所有代币
+```
+
+### 2. 给水龙头钱包充值（必须）
+
+```bash
+# 向水龙头钱包充值 SOL（用于支付 gas 费）
+# 建议至少 0.1 SOL，每次领取消耗约 0.008 SOL
+
+# 向水龙头钱包充值 EACO 代币（用于分发给用户）
+# 数量根据您计划的领取总量决定
+```
+
+### 3. 后端服务部署（必须）
+
+```bash
+# 安装 Node.js 依赖
+cd server
+npm install
+
+# 启动签名服务（在服务器后台运行）
+node signer.js
+
+# 配置 PHP 环境（Apache/Nginx + PHP 7.4+）
+# 将 server/ 目录放在 web 根目录之外，通过 PHP-FPM 或 CGI 调用
+```
+
+### 4. 配置文件调整（必须）
+
+```php
+// server/config.php
+// 修改以下配置：
+define('CORS_ORIGIN', 'https://your-domain.com');  // 您的域名
+define('FAUCET_KEYPAIR_PATH', __DIR__ . '/faucet-keypair.json');  // 私钥路径
+```
+
+```javascript
+// js/config.js
+// 修改后端 API 地址：
+window.EACO_BACKEND = 'https://your-server.com/server';
+```
+
+### 5. 领取记录存储（自动创建）
+
+```
+server/data/          # 此目录会被自动创建
+├── claims.json      # 地址领取记录（7天冷却）
+├── ip_records.json  # IP 限频记录（30分钟）
+└── stats.json       # 统计数据
+```
+
+### 6. 可选：Rust 链上程序
+
+```bash
+cd rust
+# 安装 Anchor
+cargo build
+# 部署到 Solana 网络（需要 ~0.5 SOL 租金）
+anchor deploy
+```
+
+---
 
 ## EACO Token Info
 
@@ -252,7 +341,7 @@ MIT - Free to use, modify, and distribute.
 
 ---
 
-EACO Faucet - Free EACO Token Claim Website v0.01
+EACO Faucet - Free EACO Token Claim Website **v0.01 (Demo)**
 
 ## Contact
 
