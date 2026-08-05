@@ -1,0 +1,14 @@
+# EACO Faucet v0.01 - Minimal static site
+FROM busybox
+LABEL maintainer="EACO Community"
+LABEL version="0.01"
+LABEL description="EACO Faucet - Earth's Best Coin"
+# Copy all static files to /var/www
+COPY index.html /var/www/
+COPY js/ /var/www/js/
+COPY LICENSE /var/www/
+COPY README.md /var/www/
+COPY MANUAL.md /var/www/
+# Simple HTTP server
+EXPOSE 8080
+CMD ["httpd", "-f", "-p", "8080", "-h", "/var/www"]
